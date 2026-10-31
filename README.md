@@ -1,8 +1,19 @@
-# PsychoPad X
+# PsychoPad X: Psychonauts 1 Xbox Controller Fix for PC (GOG)
 
-Pick-up-and-play Xbox controller support for the GOG build of Psychonauts 1 (exe 1.1.500): turn on a pad, launch the game, and get Xbox button prompts and working controls.
+Fixes controller problems in the PC version of the original Psychonauts (2005) on Windows: turn on an Xbox-style controller, launch the game, and get Xbox button prompts and working controls. It's for the first game, not Psychonauts 2.
 
-It's a small `xinput1_3.dll` that sits beside `Psychonauts.exe` and forwards to the system's XInput, fixing controller handling on the way through.
+It's a small `xinput1_3.dll` that sits beside `Psychonauts.exe` and forwards to the system's XInput, fixing controller handling on the way through. It's a modern follow-up to the PsychoPad mod.
+
+## Problems this addresses
+
+- Psychonauts controller or gamepad not detected, or ignored because another device holds XInput slot 0
+- Xbox controller not working if it's switched on after launching the game
+- On-screen button prompts showing keyboard keys or mouse icons instead of Xbox buttons (with PsychoPad's icons installed)
+- Wrong or identical button icons for L3 and R3, the stick clicks
+- Triggers firing by themselves from trigger noise
+- Controller bindings lost or garbled after quitting and restarting, the bug psycho_fix traced to `MapVirtualKeyEx` (this one is expected to help under Proton, but isn't tested there yet)
+
+**Which version?** Built for the GOG release, exe 1.1.500. On other builds, such as Steam, only the slot and trigger fixes run, and that hasn't been tested. On Steam Deck or Linux with the Steam version, try [psycho_fix](https://github.com/jdaniellee/psycho_fix) first.
 
 ## Credit
 
