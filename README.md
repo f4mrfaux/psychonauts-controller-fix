@@ -56,7 +56,19 @@ Not yet tested: a physical controller, the right stick, the L3/R3 icons on scree
 - The GOG build of Psychonauts, exe 1.1.500
 - PsychoPad Lite v1.1 applied, for its `XI_Icons` art and prompt text. That art has no license statement, so it isn't included here.
 
-## Use
+## Install
+
+1. Apply PsychoPad Lite v1.1 if you haven't already.
+2. Download the zip from [Releases](https://github.com/f4mrfaux/psychonauts-controller-fix/releases) and extract it anywhere.
+3. Close the game, open PowerShell in the extracted folder and run:
+
+       powershell -ExecutionPolicy Bypass -File .\install.ps1 -GameDir "<game folder>"
+
+   Or copy `xinput1_3.dll` beside `Psychonauts.exe` by hand. That gives you everything except the separate L3/R3 icons.
+
+The DLL isn't code-signed, so check its hash against the release notes if you like, or build it yourself.
+
+## Build from source
 
 Build with Visual Studio 2022's C tools, then test and install:
 

@@ -3,7 +3,9 @@
 param([Parameter(Mandatory)][string]$GameDir)
 $ErrorActionPreference = 'Stop'
 
-$dll = Join-Path $PSScriptRoot 'build\xinput1_3.dll'
+# Beside this script in a release zip, under build\ in a source checkout.
+$dll = Join-Path $PSScriptRoot 'xinput1_3.dll'
+if (-not (Test-Path -LiteralPath $dll)) { $dll = Join-Path $PSScriptRoot 'build\xinput1_3.dll' }
 $icons = Join-Path $GameDir 'WorkResource\Textures\Icons'
 $table = Join-Path $icons 'UI_Icons\IconPrefsPC.ini'
 $backup = "$table.psychopadx.bak"
